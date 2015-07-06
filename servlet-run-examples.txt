@@ -1,0 +1,22 @@
+Before running a servlet test you must configure your Honeybadger API key. The
+simplest way to do so is by setting the following environment variable:
+export HONEYBADGER_API_KEY=your-api-key
+
+You may alternatively edit the honeybadger.api_key init param in web.xml:
+vi servlet/src/main/webapp/WEB-INF/web.xml
+
+You can test Tomcat 8 by:
+mvn -pl servlet clean package cargo:run -Dcargo.maven.containerId=tomcat8x -Dcargo.maven.containerUrl=http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.23/bin/apache-tomcat-8.0.23.zip
+
+You can test in Jetty 9 by:
+mvn -pl servlet clean package cargo:run -Dcargo.maven.containerId=jetty9x -Dcargo.maven.containerUrl=http://download.eclipse.org/jetty/9.3.0.v20150612/dist/jetty-distribution-9.3.0.v20150612.zip
+
+For all of the configurations, after the application server boots up and you go to:
+http://localhost:8080/servlet/
+
+You should see "Hello World"
+
+When you go to:
+http://localhost:8080/servlet/error/
+
+You will trigger an error that gets sent to Honeybadger.
