@@ -16,21 +16,26 @@ public class App
                 args[0] :
                 System.getenv("HONEYBADGER_API_KEY");
 
-        if (apiKey == null) {
+        if (apiKey == null || apiKey.isEmpty()) {
             System.err.println("HONEYBADGER_API_KEY environment variable not " +
                     "set");
 
-            Scanner in = new Scanner(System.in);
+            try (Scanner in = new Scanner(System.in)) {
+                System.out.print("What is your Honeybadger API key: ");
+                apiKey = in.nextLine().trim();
 
-            System.out.print("What is your Honeybadger API key: ");
-            apiKey = in.nextLine();
-
-            System.out.print("\n");
+                System.out.print("\n");
+            }
         }
 
         System.setProperty(HoneybadgerReporter.HONEYBADGER_API_KEY_SYS_PROP_KEY, apiKey);
+
+        System.out.println(String.format("Your API key is: [%s]",
+                System.getProperty(HoneybadgerReporter.HONEYBADGER_API_KEY_SYS_PROP_KEY)));
+
         HoneybadgerUncaughtExceptionHandler.registerAsUncaughtExceptionHandler();
-        System.out.printf("Failing... %s", apiKey);
+        System.out.println("Failing...");
+
         throw new RuntimeException("Testing honeybadger.");
     }
 }
