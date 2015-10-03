@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
   javaWs
 )
 
-libraryDependencies += "io.honeybadger" % "honeybadger-java" % "1.0.9"
+libraryDependencies += "io.honeybadger" % "honeybadger-java" % "1.0.10"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
