@@ -11,6 +11,10 @@
         <filter-name>HoneybadgerFilter</filter-name>
         <filter-class>io.honeybadger.reporter.servlet.HoneybadgerFilter</filter-class>
         <init-param>
+            <param-name>honeybadger.api_key</param-name>
+            <param-value>84ecba30</param-value>
+        </init-param>
+        <init-param>
             <param-name>honeybadger.excluded_exception_classes</param-name>
             <param-value>org.apache.catalina.connector.ClientAbortException</param-value>
         </init-param>
