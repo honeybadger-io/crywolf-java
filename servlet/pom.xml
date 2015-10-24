@@ -20,7 +20,7 @@
         <dependency>
             <groupId>io.honeybadger</groupId>
             <artifactId>honeybadger-java</artifactId>
-            <version>1.0.11-SNAPSHOT-beta1</version>
+            <version>LATEST</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
