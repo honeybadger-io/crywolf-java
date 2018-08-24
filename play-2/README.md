@@ -1,6 +1,7 @@
 # Run Play 2 Sample App
 
-Edit your play-2/conf/application.properties, replacing the commented with your API KEY.
+Edit your play-2/conf/application.properties, remove the comment mark from the honeybadger.api_key line,
+then replace [YOURKEY] with your HoneyBadger API key.
 
 honeybadger.api_key = [YOURKEY]
 
