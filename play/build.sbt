@@ -11,10 +11,11 @@ resolvers += Resolver.mavenLocal
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
-  javaWs
+  javaWs,
+  guice
 )
 
-libraryDependencies += "io.honeybadger" % "honeybadger-java" % "]1,)"
+libraryDependencies += "io.honeybadger" % "honeybadger-java" % "]2,)"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
