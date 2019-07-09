@@ -30,6 +30,7 @@ buildNumber.properties
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 *.iml
+*.imr
 
 ## Directory-based project format:
 .idea/
@@ -73,3 +74,6 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+
+logs/
+/play-2/.g8
